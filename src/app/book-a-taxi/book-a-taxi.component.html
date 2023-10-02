@@ -1,0 +1,39 @@
+
+<div class="book-taxi">
+  <h2>Book a Taxi</h2>
+  <form [formGroup]="bookingForm" (ngSubmit)="taxiBooking()">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="pickup-location">Pickup Location</label>
+      <select input type="text" id="pickup-location"  ngModel="pickuplocation"  formControlName="pickuplocation" name="pickup-location" placeholder="Enter pickup location" required>
+        <option *ngFor="let location of availableLocations" [value]="location">{{ location }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="dropoff-location">Destination</label>
+      <select input type="text" id="dropoff-location" ngModel="dropofflocation" formControlName="dropofflocation" name="dropoff-location" placeholder="Enter dropoff location" required>
+        <option *ngFor="let location of availableLocations" [value]="location">{{ location }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pickup-date">Pickup Date</label>
+      <input type="date" id="pickup-date" formControlName="pickupdate" name="pickup-date" required>
+    </div>
+    <div class="form-group">
+      <label for="pickup-time">Pickup Time</label>
+      <input type="time" id="pickup-time" formControlName="pickuptime" name="pickup-time" required>
+    </div>
+    <div class="form-group">
+      <label for="passenger-count">Number of Passengers</label>
+      <input type="number" id="passenger-count" formControlName="passengercount" name="passenger-count" min="1" [max]="maxPassengers" required>
+    </div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <button type="button" (click)="taxiBooking()">Book Taxi</button>
+  </form>
+</div>
+
+

@@ -1,0 +1,18 @@
+<body>
+<div class="payment-container">
+  <h2>Payment Details</h2>
+  <div *ngIf="bookingDetails">
+    <p><strong>Total Fare:</strong> {{ estimatedFare  | formattedIndianCurrency: 'INR' }}</p>
+
+    <div class="button-container">
+    <button (click)="confirmPayment()">Confirm Payment</button>
+    </div>
+  </div>
+  <div *ngIf="!bookingDetails">
+    <p>No booking details found. Please go back and book a taxi first.</p>
+  </div>
+  <div class="button-container"><button type="button" (click)="redirectToCashPayment()">Cash</button></div>
+  <div class="button-container"><button type="button" (click)="cancelBooking()">Cancel</button></div>
+
+</div>
+</body>

@@ -1,0 +1,72 @@
+/* header.component.css */
+header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  width: 55px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #ffcc00;
+  color: #202020;
+}
+
+nav a {
+  color: #ffcc00;
+  margin-right: 20px;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+  opacity: 1;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(255, 204, 0, 0.5);
+  animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px 20px rgba(255, 204, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+  }
+}
+
+a.active {
+  font-weight: bold;
+  color: red;
+}
+

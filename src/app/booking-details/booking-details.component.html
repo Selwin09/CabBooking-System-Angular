@@ -1,0 +1,28 @@
+<h2>Booking History</h2>
+<div *ngIf="bookingHistory.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Pickup Location</th>
+        <th>Dropoff Location</th>
+        <th>Pickup Date</th>
+        <th>Pickup Time</th>
+        <th>Passenger Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookingHistory">
+        <td>{{ booking.name }}</td>
+        <td>{{ booking.pickuplocation }}</td>
+        <td>{{ booking.dropofflocation }}</td>
+        <td>{{ booking.pickupdate }}</td>
+        <td>{{ booking.pickuptime }}</td>
+        <td>{{ booking.passengercount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="bookingHistory.length === 0" class="no-history-message">
+  No booking history available.
+</div>

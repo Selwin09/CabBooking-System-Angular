@@ -1,0 +1,18 @@
+.moving-text-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.moving-text {
+  animation: moveText 15s linear infinite;
+  color:rgb(110, 5, 5);
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(-100%); /* Start the text off the left side of the container */
+  }
+  100% {
+    transform: translateX(-100%); /* Move the text to the right side of the container */
+  }
+}

@@ -1,0 +1,18 @@
+/* footer.component.css */
+footer {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links a {
+  color: #fff;
+  margin-right: 20px;
+  text-decoration: none;
+}

@@ -1,0 +1,31 @@
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-top: 20px;
+  text-align: center;
+  background-image: linear-gradient(to right, #ff7a00, #ff00c8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  background-image: url('/assets/cash.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
